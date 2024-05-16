@@ -3,12 +3,12 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
-            "args": [                
+            "command": "/usr/bin/g++", // g++ compiler
+            "args": [                    // set of args sent to compiler
                 "-fdiagnostics-color=always",
                 "-g",
-                "-std=c++17",
-                "${fileDirname}/*.cpp",
+                "-std=c++17",             // standard to support
+                "${fileDirname}/*.cpp",   // source files to compiler. All cpp files 
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
