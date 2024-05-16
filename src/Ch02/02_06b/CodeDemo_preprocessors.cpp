@@ -28,7 +28,7 @@ int main(){
     int32_t large = CAPACITY;
     uint8_t small = 37;
 
-#ifdef DEBUG // helps in debugging
+#ifdef DEBUG // helps in debugging, keep this in mind
     std::cout << "Before addition"  << std::endl;
 #endif
 

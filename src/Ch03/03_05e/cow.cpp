@@ -1,6 +1,6 @@
-#include "cow.h"
+#include "cow.h" // cow.h is not part of the standard library. So, put in the double quotes
 
-cow::cow(std::string name_i, int age_i, cow_purpose purpose_i){
+cow::cow(std::string name_i, int age_i, cow_purpose purpose_i){ // the constructor implementation
     name = name_i;
     age = age_i;
     purpose = purpose_i;
