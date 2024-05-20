@@ -16,7 +16,7 @@ int main(){
     std::cout << "Average: " << average << std::endl;
 
     average = 0.0f;
-    for (auto x : numbers)
+    for (auto x : numbers) // another form of for loop in c++11 standard. Traverse range with iterator. Specify variable to traverse the container. Then a colon and the name of the vector. Copies value of each element into the auto variable.
         average += x;
     average /= numbers.size();
     std::cout << "Average: " << average << std::endl;

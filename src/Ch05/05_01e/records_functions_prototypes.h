@@ -40,13 +40,13 @@ public:
     char get_grade() const;
 };
 
-class StudentRecords{
+class StudentRecords{ // no overloaded constructor. Default one will do
 private:
     std::vector<Student> students;
     std::vector<Course> courses;
     std::vector<Grade> grades;
 
-    float get_num_grade(char) const;
+    float get_num_grade(char) const; // private member function to convert letter grades to numbers. Just parameter type given, no parameter name. This is called function prototype. Name mandatory in the function defn though.
     
 public:
     void add_student(int, std::string);

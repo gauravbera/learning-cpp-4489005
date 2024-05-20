@@ -2,6 +2,13 @@
 // Exercise 05_02
 // Function Parameters, by Eduardo Corpeño 
 
+// typically arguments passed by value
+// copies of variables created
+// can also pass arguments as pointers
+// power to access variable inside a function
+// can also pass arguments as references
+
+
 #include <iostream>
 
 int main(){

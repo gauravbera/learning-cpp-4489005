@@ -1,3 +1,4 @@
+#include <iostream>
 #include "records.h"
 
 Student::Student(int the_id, std::string the_name){
@@ -95,3 +96,70 @@ float StudentRecords::get_GPA(int sid) const{
         }
     return (points / credits);
 }
+
+std::string StudentRecords::get_course_name(int courseid) {
+    for ( Course& course : courses) {
+        if( course.get_id() == courseid ) {
+            return course.get_name();
+        }
+    }
+    return NULL;
+}
+
+void StudentRecords::report_card(int studentid) {
+    bool student_checker = false;
+    std::string student_name;
+    for (Student& student : students)
+    {
+        if (student.get_id() == studentid)
+        {
+            std::cout << "Student found ! Printing the report card !" << std::endl << std::endl;
+            // student_name = student.get_name();
+            student_checker = true;
+            break; // move out of the for loop !
+        }      
+    }
+
+    if(student_checker == false) {
+        std::cout << "Student not found ! Invalid ID "  << std::endl << std::endl;
+        return; // get out of the function execution
+    }
+
+    std::cout << "Name of the student : " << get_student_name(studentid) << std::endl << std::endl;
+
+    int fetch_course_id;
+    char fetch_grade;
+    std::string fetch_course_name;
+
+    for (Grade& grade : grades)
+    {
+        if (grade.get_student_id() == studentid) {
+            // get the course id, then derive the course name and letter grade
+            fetch_course_id = grade.get_course_id();
+            fetch_course_name = get_course_name(fetch_course_id);
+            fetch_grade = grade.get_grade();
+            std::cout << "Course ID : " << fetch_course_id << " , Course name: " << fetch_course_name << " , Course grade: " << fetch_grade << std::endl << std::endl;
+        }
+
+    } // finish the loop with all details
+
+    std::cout << "GPA final : " << get_GPA(studentid) << std::endl << std::endl;
+
+    std::cout << std::endl << std::endl;
+
+}
+
+/*
+Enter a student ID: 2
+Student found ! Printing the report card !
+
+Name of the student : Nancy Rhodes
+
+Course ID : 1 Course name: Algebra Course grade: A
+
+Course ID : 2 Course name: Physics Course grade: A
+
+Course ID : 4 Course name: Economics Course grade: B
+
+GPA final : 3.69231
+*/

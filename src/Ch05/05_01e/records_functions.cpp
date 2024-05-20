@@ -1,5 +1,9 @@
 #include "records.h"
 
+// functions are procedural blocks of code that returns a value
+// functions receive fixed number of arguments
+// parameters are variables in function taking values of arguments
+// functions maybe global or members of a class
 Student::Student(int the_id, std::string the_name){
     id = the_id;
     name = the_name;
@@ -43,7 +47,7 @@ char Grade::get_grade() const{
 }
 
 void StudentRecords::add_student(int sid, std::string sname){
-    students.push_back(Student(sid, sname));
+    students.push_back(Student(sid, sname)); // just pushback
 }
 
 void StudentRecords::add_course(int cid, std::string cname, unsigned char ccredits){
@@ -74,8 +78,8 @@ float StudentRecords::get_num_grade(char letter) const{
 std::string StudentRecords::get_student_name(int sid) const{
     int i = 0;
     while (i < students.size() && students[i].get_id() != sid)
-        i++;
-    return students[i].get_name();
+        i++; // just iterate
+    return students[i].get_name(); // if it is equal, just return the result
 }
 
 unsigned char StudentRecords::get_course_credits(int cid) const{
@@ -85,13 +89,4 @@ unsigned char StudentRecords::get_course_credits(int cid) const{
     return courses[j].get_credits();
 }
 
-float StudentRecords::get_GPA(int sid) const{
-    float points = 0.0f, credits = 0.0f;
-    for (const Grade& grd : grades)
-        if (grd.get_student_id() == sid){
-            unsigned char current_credits = get_course_credits(grd.get_course_id());
-            credits += current_credits;
-            points += get_num_grade(grd.get_grade()) * current_credits;
-        }
-    return (points / credits);
-}
+float StudentRecords::get_GPA(int sid) const{}

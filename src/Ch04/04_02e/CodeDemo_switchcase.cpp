@@ -15,10 +15,10 @@ int main(){
     std::cout << "Choose operation [ + - * / ]: " << std::flush;
     std::cin >> operation;
 
-    switch (operation){
-        case '+':
+    switch (operation){ // branching statement allowing to take one or several paths
+        case '+': // constant of interest. Character constant in single quotes
             result = operand_1 + operand_2;
-            break;
+            break; // every case block ending with break statement to halt the switch execution
         case '-':
             result = operand_1 - operand_2;
             break;
@@ -28,7 +28,7 @@ int main(){
         case '/':
             result = operand_1 / operand_2;
             break;
-        default:
+        default: // by default we perform addition
             result = operand_1 + operand_2;
             break;
     }

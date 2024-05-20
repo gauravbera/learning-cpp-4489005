@@ -6,11 +6,11 @@
 #include <vector>
 #include "records.h"
 
-void initialize(StudentRecords&);
+void initialize(StudentRecords&); // declare a function prototype, it is declared here because not much to do with students record object
 
 int main(){
     int id;
-    StudentRecords SR;
+    StudentRecords SR; // we need a student records object
     
     initialize(SR);
 

@@ -1,6 +1,8 @@
 // Learning C++ 
 // Exercise 04_01
 // If Statements, by Eduardo Corpeño 
+// control statements are parts of code where execution
+// takes different paths depending on the condition
 
 #include <iostream>
 
@@ -12,9 +14,9 @@ int main(){
     if (a > 1000)
         std::cout << "Warning: a is over 1000." << std::endl;
 
-    if (a % 2)
-        std::cout << "a is odd" << std::endl;
-    else
+    if (a % 2) // should be a % 2 == 0, but in c and c++, 0 is false . 1 is true. If expression is 0, the else part is executed
+        std::cout << "a is odd" << std::endl; // not zero or true, the number is ODD 
+    else  // the else part can be optional. Sometimes we only care that the condition is true in the if
         std::cout << "a is even" << std::endl;
 
     std::cout << "The letter " << lttr << " is ";
